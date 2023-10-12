@@ -34,4 +34,14 @@ class LoggingTest extends TestCase
         Log::error("ini adalah error ke semua channel");
         self::assertTrue(true);
     }
+
+    public function testFileHandler()
+    {
+        $fileLogger = Log::channel('file');
+        $fileLogger->info("This is an log info from testFileHandler");
+        $fileLogger->warning("This is an log info from testFileHandler");
+        $fileLogger->error("This is an log info from testFileHandler");
+
+        self::assertTrue(true);
+    }
 }
